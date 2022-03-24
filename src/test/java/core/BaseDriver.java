@@ -8,7 +8,6 @@ public class BaseDriver implements CommonPages {
     public static void setParameters() {
         Configuration.browser = "firefox";
         Configuration.startMaximized = true;
-        Configuration.headless = false;
     }
 }
 

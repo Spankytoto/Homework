@@ -24,6 +24,4 @@ public class MainPage {
         mainMenuLoanLeasingButton.click();
         smallLoanSubMenu.click();
     }
-
-
 }

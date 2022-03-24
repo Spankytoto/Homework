@@ -3,8 +3,6 @@ package pages;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.support.FindBy;
 
-import java.util.List;
-
 import static com.codeborne.selenide.Selenide.actions;
 
 public class SmallLoanPage {
@@ -15,28 +13,23 @@ public class SmallLoanPage {
     @FindBy(xpath = "//*[@id='contract-fee-result']")
     public SelenideElement agreementFeeField;
 
-    @FindBy(xpath = "//*[text()='Choose loan sum:']//..//..//button[@role='slider']")
+    @FindBy(xpath = "(//*[@role='slider'])[1]")
     public SelenideElement loanSumSlider;
 
-    @FindBy(xpath = "//*[text()='Choose loan term:']//..//..//button[@role='slider']")
+    @FindBy(xpath = "(//*[@role='slider'])[2]")
     public SelenideElement loanTermSlider;
 
-    @FindBy(xpath = "//input[@class='ui-slider__input']")
-    public List<SelenideElement> loanSumField;
+    @FindBy(xpath = "(//input[@class='ui-slider__input'])[1]")
+    public SelenideElement loanSumField;
 
-    public SmallLoanPage changeLoanSumSliderPosition (int value) {
+    @FindBy(xpath = "(//*[@class='ui-slider__value'])[1]")
+    public SelenideElement loanSumOverSlider;
+
+    public void changeLoanSumSliderPosition (int value) {
         actions().moveToElement(loanSumSlider).clickAndHold().moveByOffset(value, 0).release().perform();
-        return this;
     }
 
-    public SmallLoanPage changeLoanTermSliderPosition (int value) {
+    public void changeLoanTermSliderPosition (int value) {
         actions().moveToElement(loanTermSlider).clickAndHold().moveByOffset(value, 0).release().perform();
-        return this;
     }
-
-
-
-
-
-
 }

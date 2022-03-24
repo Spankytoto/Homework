@@ -9,5 +9,4 @@ public interface CommonPages {
 
     MainPage mainPage = page(MainPage.class);
     SmallLoanPage smallLoanPage = page(SmallLoanPage.class);
-
 }
