@@ -1,6 +1,7 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
+import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 
 public class MainPage {
@@ -20,12 +21,14 @@ public class MainPage {
     @FindBy(xpath = "//*[text()='Small loan']")
     public SelenideElement smallLoanSubMenu;
 
+    @Step("Set language to English")
     public void setLanguage () {
         acceptAllCookiesButton.click();
         languageBar.click();
         switchToEnglishButton.click();
     }
 
+    @Step("Go to small loan page")
     public void goToSmallLoanPage () {
         mainMenuLoanLeasingButton.click();
         smallLoanSubMenu.click();

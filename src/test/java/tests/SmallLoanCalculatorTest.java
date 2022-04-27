@@ -1,13 +1,17 @@
 package tests;
 
 import core.Settings;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+@Feature("Small Loan Calculator")
+@Story("Check new features for small loan calculator")
 public class SmallLoanCalculatorTest extends Settings {
 
-    @Test(testName = "Test-case #1: Check that “Choose loan sum” slider works correctly")
+    @Test(description = "Test-case #1: Check that “Choose loan sum” slider works correctly")
     public void checkChooseLoanSumSlider() {
         mainPage.goToSmallLoanPage();
         smallLoanPage.changeLoanSumSliderPosition(100);
@@ -18,7 +22,7 @@ public class SmallLoanCalculatorTest extends Settings {
         Assert.assertEquals(sumOverSlider, sumInRightField);
     }
 
-    @Test(testName = "Test-case #2: Check that you cannot type more than 20 000 in “Choose loan sum” field")
+    @Test(description = "Test-case #2: Check that you cannot type more than 20 000 in “Choose loan sum” field")
     public void checkLoanSumFieldCapacity() {
         mainPage.goToSmallLoanPage();
         smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "21000");
@@ -28,7 +32,7 @@ public class SmallLoanCalculatorTest extends Settings {
         Assert.assertTrue(smallLoanPage.loanSumField.getValue().contains("20000 €"));
     }
 
-    @Test(testName = "Test-case #3: Check that you cannot type 0 in “Choose loan sum” field")
+    @Test(description = "Test-case #3: Check that you cannot type 0 in “Choose loan sum” field")
     public void checkZeroInLoanSumField() {
         mainPage.goToSmallLoanPage();
         smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "0");
@@ -38,7 +42,7 @@ public class SmallLoanCalculatorTest extends Settings {
         Assert.assertTrue(smallLoanPage.loanSumField.getValue().contains("300 €"));
     }
 
-    @Test(testName = "Test-case #4: Check that monthly payment changes when you change loan sum")
+    @Test(description = "Test-case #4: Check that monthly payment changes when you change loan sum")
     public void checkThatMonthlyPaymentChanges() {
         mainPage.goToSmallLoanPage();
 
@@ -52,7 +56,7 @@ public class SmallLoanCalculatorTest extends Settings {
         Assert.assertNotEquals(monthlyPaymentBeforeAction, monthlyPaymentAfterAction);
     }
 
-    @Test(testName = "Test-case #5: Check that “Choose loan term” slider works correctly")
+    @Test(description = "Test-case #5: Check that “Choose loan term” slider works correctly")
     public void checkThatLoanTermSliderWorks() {
         mainPage.goToSmallLoanPage();
 
@@ -66,7 +70,7 @@ public class SmallLoanCalculatorTest extends Settings {
         Assert.assertTrue(monthlyPaymentBeforeAction > monthlyPaymentAfterAction);
     }
 
-    @Test(testName = "Test-case #6: Check that “Agreement fee” changes correctly")
+    @Test(description = "Test-case #6: Check that “Agreement fee” changes correctly")
     public void checkThatAgreementFeeChanges() {
         mainPage.goToSmallLoanPage();
 
@@ -82,7 +86,7 @@ public class SmallLoanCalculatorTest extends Settings {
         Assert.assertTrue(agreementFeeAfterAction.equals(300));
     }
 
-    @Test(testName = "Test-case #7: Check that slider moves when you change loan sum manually")
+    @Test(description = "Test-case #7: Check that slider moves when you change loan sum manually")
     public void checkSumOverSliderAfterMove() {
         mainPage.goToSmallLoanPage();
 
