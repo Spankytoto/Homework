@@ -26,7 +26,6 @@ public class SmallLoanPage {
     @FindBy(xpath = "(//*[@class='ui-slider__value'])[1]")
     public SelenideElement loanSumOverSlider;
 
-    @Step("Let's change the position of the slider!")
     public void changeLoanSumSliderPosition(int value) {
         actions().moveToElement(loanSumSlider).clickAndHold().moveByOffset(value, 0).release().perform();
     }
