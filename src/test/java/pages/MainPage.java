@@ -20,6 +20,12 @@ public class MainPage {
     @FindBy(xpath = "//*[text()='Small loan']")
     public SelenideElement smallLoanSubMenu;
 
+    public void setLanguage () {
+        acceptAllCookiesButton.click();
+        languageBar.click();
+        switchToEnglishButton.click();
+    }
+
     public void goToSmallLoanPage () {
         mainMenuLoanLeasingButton.click();
         smallLoanSubMenu.click();

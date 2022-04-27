@@ -1,11 +1,11 @@
 package tests;
 
-import core.Hook;
+import core.Settings;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class SmallLoanCalculatorTests extends Hook {
+public class SmallLoanCalculatorTest extends Settings {
 
     @Test(testName = "Test-case #1: Check that “Choose loan sum” slider works correctly")
     public void checkChooseLoanSumSlider() {

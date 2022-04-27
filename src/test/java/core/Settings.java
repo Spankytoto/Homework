@@ -1,7 +1,7 @@
 package core;
 
 import com.codeborne.selenide.WebDriverRunner;
-import helper.CommonPages;
+import helper.Pages;
 import lombok.SneakyThrows;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class Hook implements CommonPages {
+public class Settings implements Pages {
 
     @BeforeClass(alwaysRun = true)
     public static void webDriverSetup() {
@@ -21,9 +21,7 @@ public class Hook implements CommonPages {
     public static void goToMainPage() {
         open("https://www.swedbank.ee/");
         Thread.sleep(3000);
-        mainPage.acceptAllCookiesButton.click();
-        mainPage.languageBar.click();
-        mainPage.switchToEnglishButton.click();
+        mainPage.setLanguage();
     }
 
     @AfterMethod(alwaysRun = true)

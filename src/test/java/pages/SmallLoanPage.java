@@ -25,11 +25,11 @@ public class SmallLoanPage {
     @FindBy(xpath = "(//*[@class='ui-slider__value'])[1]")
     public SelenideElement loanSumOverSlider;
 
-    public void changeLoanSumSliderPosition (int value) {
+    public void changeLoanSumSliderPosition(int value) {
         actions().moveToElement(loanSumSlider).clickAndHold().moveByOffset(value, 0).release().perform();
     }
 
-    public void changeLoanTermSliderPosition (int value) {
+    public void changeLoanTermSliderPosition(int value) {
         actions().moveToElement(loanTermSlider).clickAndHold().moveByOffset(value, 0).release().perform();
     }
 }

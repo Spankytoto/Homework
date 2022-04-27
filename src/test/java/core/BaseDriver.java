@@ -1,9 +1,9 @@
 package core;
 
 import com.codeborne.selenide.Configuration;
-import helper.CommonPages;
+import helper.Pages;
 
-public class BaseDriver implements CommonPages {
+public class BaseDriver implements Pages {
 
     public static void setParameters() {
         Configuration.browser = "firefox";
