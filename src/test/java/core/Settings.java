@@ -23,7 +23,6 @@ public class Settings implements Pages {
     @BeforeMethod(alwaysRun = true)
     public static void goToMainPage() {
         open("https://www.swedbank.ee/");
-        Thread.sleep(3000);
         mainPage.setLanguage();
     }
 
