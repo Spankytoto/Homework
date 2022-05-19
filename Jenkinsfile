@@ -2,10 +2,23 @@ pipeline {
         agent any
 
         stages {
-            stage("test") {
+            stage("tests") {
                 steps {
                     bat "mvn clean install"
             }
         }
-    }
+            stage('report') {
+                  steps {
+                        allure([report: "allure-report", results: [[path: "target/allure-results"]]])
+                            }
+                        }
+
+            }
+            post {
+                    cleanup {
+                        deleteDir()
+                    }
+        }
 }
+
+
