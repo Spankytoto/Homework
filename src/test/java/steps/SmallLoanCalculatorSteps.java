@@ -39,8 +39,8 @@ public class SmallLoanCalculatorSteps implements Pages {
     }
 
     @Step("Type sum into 'Choose loan sum' field")
-    public void fillLoanSum(String sum) {
-        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, sum);
+    public void fillLoanSum(Integer sum) {
+        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, sum.toString());
         smallLoanPage.monthlyPaymentField.click();
     }
 
