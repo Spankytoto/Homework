@@ -1,6 +1,10 @@
 pipeline {
         agent any
 
+    parameters {
+        choice(name: 'suite', choices: ['suitesGui.xml'], description: 'suite')
+        }
+
         stages {
             stage("tests") {
                 steps {
