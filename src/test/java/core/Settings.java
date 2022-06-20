@@ -2,17 +2,16 @@ package core;
 
 import com.codeborne.selenide.WebDriverRunner;
 import helper.ApiHelper;
-import pages.Pages;
-import steps.Steps;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import steps.Steps;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class Settings implements Pages, Steps {
+public class Settings implements Steps {
 
     public static ConfigData configData = ConfigData.readFileDataConfig();
 
