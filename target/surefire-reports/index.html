@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-GUI" class="navigator-link">
+              <span class="suite-name border-passed">GUI</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-GUI" class="navigator-link ">
+                    <span>C:\Users\Artur\IdeaProjects\Homework\src\test\resources\testNG.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-GUI" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-GUI" class="navigator-link ">
+                    <span>1 group</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-GUI" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-GUI" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-GUI" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-GUI" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">7 methods,   7 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-GUI" class="hide-methods passed suite-GUI"> (hide)</a> <!-- hide-methods passed suite-GUI -->
+                      <a href="#" panel-name="suite-GUI" class="show-methods passed suite-GUI"> (show)</a> <!-- show-methods passed suite-GUI -->
+                    </span>
+                    <div class="method-list-content passed suite-GUI">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkChooseLoanSumSlider">checkChooseLoanSumSlider</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkLoanSumFieldCapacity">checkLoanSumFieldCapacity</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkSumOverSliderAfterMove">checkSumOverSliderAfterMove</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkThatAgreementFeeChanges">checkThatAgreementFeeChanges</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkThatLoanTermSliderWorks">checkThatLoanTermSliderWorks</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkThatMonthlyPaymentChanges">checkThatMonthlyPaymentChanges</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-GUI" title="tests.SmallLoanCalculatorTest" class="method navigator-link" hash-for-method="checkZeroInLoanSumField">checkZeroInLoanSumField</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-GUI -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-GUI" class="panel GUI">
+          <div class="suite-GUI-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">tests.SmallLoanCalculatorTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkChooseLoanSumSlider">
+                  </a> <!-- checkChooseLoanSumSlider -->
+                  <span class="method-name">checkChooseLoanSumSlider</span>
+                  <em>
+(Test-case #1: Check that “Choose loan sum” slider works correctly)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkLoanSumFieldCapacity">
+                  </a> <!-- checkLoanSumFieldCapacity -->
+                  <span class="method-name">checkLoanSumFieldCapacity</span>
+                  <em>
+(Test-case #2: Check that you cannot type more than 20 000 in “Choose loan sum” field)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkSumOverSliderAfterMove">
+                  </a> <!-- checkSumOverSliderAfterMove -->
+                  <span class="method-name">checkSumOverSliderAfterMove</span>
+                  <em>
+(Test-case #7: Check that slider moves when you change loan sum manually)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkThatAgreementFeeChanges">
+                  </a> <!-- checkThatAgreementFeeChanges -->
+                  <span class="method-name">checkThatAgreementFeeChanges</span>
+                  <em>
+(Test-case #6: Check that “Agreement fee” changes correctly)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkThatLoanTermSliderWorks">
+                  </a> <!-- checkThatLoanTermSliderWorks -->
+                  <span class="method-name">checkThatLoanTermSliderWorks</span>
+                  <em>
+(Test-case #5: Check that “Choose loan term” slider works correctly)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkThatMonthlyPaymentChanges">
+                  </a> <!-- checkThatMonthlyPaymentChanges -->
+                  <span class="method-name">checkThatMonthlyPaymentChanges</span>
+                  <em>
+(Test-case #4: Check that monthly payment changes when you change loan sum)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="checkZeroInLoanSumField">
+                  </a> <!-- checkZeroInLoanSumField -->
+                  <span class="method-name">checkZeroInLoanSumField</span>
+                  <em>
+(Test-case #3: Check that you cannot get 0 Euro for loan)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-GUI-class-passed -->
+        </div> <!-- panel GUI -->
+        <div panel-name="test-xml-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Users\Artur\IdeaProjects\Homework\src\test\resources\testNG.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite thread-count=&quot;10&quot; parallel=&quot;methods&quot; name=&quot;GUI&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;10&quot; parallel=&quot;methods&quot; name=&quot;Swedbank&quot; verbose=&quot;0&quot;&gt;
+    &lt;packages&gt;
+      &lt;package name=&quot;tests.*&quot;/&gt;
+    &lt;/packages&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;tests.SmallLoanCalculatorTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Swedbank --&gt;
+&lt;/suite&gt; &lt;!-- GUI --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for GUI</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Swedbank (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for GUI</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Small Loan Calculator</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkChooseLoanSumSlider</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkLoanSumFieldCapacity</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkSumOverSliderAfterMove</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkThatAgreementFeeChanges</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkThatLoanTermSliderWorks</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkThatMonthlyPaymentChanges</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">checkZeroInLoanSumField</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for GUI</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_GUI');
+function tableData_GUI() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(7);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'checkThatLoanTermSliderWorks')
+data.setCell(0, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(0, 3, 1079);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'checkChooseLoanSumSlider')
+data.setCell(1, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(1, 3, 957);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'checkThatAgreementFeeChanges')
+data.setCell(2, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(2, 3, 830);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'checkSumOverSliderAfterMove')
+data.setCell(3, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(3, 3, 785);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'checkZeroInLoanSumField')
+data.setCell(4, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(4, 3, 742);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'checkThatMonthlyPaymentChanges')
+data.setCell(5, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(5, 3, 538);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'checkLoanSumFieldCapacity')
+data.setCell(6, 2, 'tests.SmallLoanCalculatorTest')
+data.setCell(6, 3, 464);
+window.suiteTableData['GUI']= { tableData: data, tableDiv: 'times-div-GUI'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <div id="times-div-GUI">
+              </div> <!-- times-div-GUI -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for GUI</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-GUI" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">tests.SmallLoanCalculatorTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">webDriverSetup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9125 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9127 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9491 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9524 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9556 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9642 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="configuration-method before">
+                <span class="method-name">goSmallLoanPage</span>
+                <span class="method-start">9979 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">checkThatLoanTermSliderWorks</span>
+                <span class="method-start">10271 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkChooseLoanSumSlider</span>
+                <span class="method-start">10651 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkLoanSumFieldCapacity</span>
+                <span class="method-start">10750 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkZeroInLoanSumField</span>
+                <span class="method-start">10911 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkThatAgreementFeeChanges</span>
+                <span class="method-start">11008 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">checkThatMonthlyPaymentChanges</span>
+                <span class="method-start">11021 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11221 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="test-method">
+                <span class="method-name">checkSumOverSliderAfterMove</span>
+                <span class="method-start">11338 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11351 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">11525 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11560 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">11600 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11609 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11654 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">11798 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">11839 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">11862 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">11895 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">12056 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">screenshot</span>
+                <span class="method-start">12124 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">12297 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>

@@ -2,13 +2,13 @@ pipeline {
         agent any
 
     parameters {
-        choice(name: 'suite', choices: ['suitesGui.xml'], description: 'suite')
+        choice(name: 'suite', choices: ['testNG.xml'], description: 'suite')
         }
 
         stages {
             stage("tests") {
                 steps {
-                    bat "mvn clean install"
+                    bat "mvn clean test -Dsurefire.suiteXmlFiles=src/test/resources/testNG.xml"
             }
         }
             stage('report') {
