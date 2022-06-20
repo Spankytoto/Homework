@@ -2,8 +2,8 @@ package core;
 
 import com.codeborne.selenide.WebDriverRunner;
 import helper.ApiHelper;
-import helper.Pages;
-import helper.Steps;
+import pages.Pages;
+import steps.Steps;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,13 +14,13 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class Settings implements Pages, Steps {
 
-    private static final String host = "https://www.swedbank.ee";
+    public static ConfigData configData = ConfigData.readFileDataConfig();
 
     @BeforeMethod(alwaysRun = true)
     public static void webDriverSetup() {
-        if (ApiHelper.getWebSiteAvailability(host)) {
+        if (ApiHelper.getWebSiteAvailability(configData.host)) {
             BaseDriver.setParameters();
-            open("https://www.swedbank.ee");
+            open(configData.host);
             mainPageSteps.setLanguage();
         } else {
             System.out.println("Website is unavailable");

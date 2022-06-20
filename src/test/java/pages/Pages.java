@@ -1,4 +1,4 @@
-package helper;
+package pages;
 
 import pages.MainPage;
 import pages.SmallLoanPage;

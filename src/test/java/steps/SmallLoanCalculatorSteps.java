@@ -1,6 +1,6 @@
 package steps;
 
-import helper.Pages;
+import pages.Pages;
 import helper.RegexpHelper;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;

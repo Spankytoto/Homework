@@ -1,16 +1,16 @@
 package core;
 
 import com.codeborne.selenide.Configuration;
-import helper.Pages;
+import pages.Pages;
 
-public class BaseDriver implements Pages {
+public class BaseDriver extends Settings {
 
     public static void setParameters() {
-        Configuration.browser = "chrome";
-        Configuration.headless = false;
-        Configuration.startMaximized = false;
-        Configuration.browserSize = "1920x1080";
-        Configuration.reportsFolder = "allure-results/reports";
+        Configuration.browser = configData.browser;
+        Configuration.headless = configData.headless;
+        Configuration.startMaximized = configData.startMaximized;
+        Configuration.browserSize = configData.browserSize;
+        Configuration.reportsFolder = configData.reportFolder;
     }
 }
 

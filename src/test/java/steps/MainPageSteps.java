@@ -1,7 +1,7 @@
 package steps;
 
 import com.codeborne.selenide.Condition;
-import helper.Pages;
+import pages.Pages;
 import io.qameta.allure.Step;
 
 import java.time.Duration;

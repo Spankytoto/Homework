@@ -1,7 +1,4 @@
-package helper;
-
-import steps.MainPageSteps;
-import steps.SmallLoanCalculatorSteps;
+package steps;
 
 import static com.codeborne.selenide.Selenide.page;
 
