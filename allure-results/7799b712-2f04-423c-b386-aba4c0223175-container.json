@@ -1,1 +1,0 @@
-{"uuid":"7799b712-2f04-423c-b386-aba4c0223175","name":"tests.SmallLoanCalculatorTest","children":["3e0f875b-9328-4c06-8b63-1ab510fb1335"],"befores":[{"name":"webDriverSetup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1655726457547,"stop":1655726457567}],"afters":[],"start":1655726457516,"stop":1655726467918}
