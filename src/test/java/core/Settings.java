@@ -2,8 +2,8 @@ package core;
 
 import com.codeborne.selenide.WebDriverRunner;
 import helper.Pages;
+import helper.Steps;
 import io.qameta.allure.Attachment;
-import lombok.SneakyThrows;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.annotations.AfterMethod;
@@ -12,20 +12,18 @@ import org.testng.annotations.BeforeMethod;
 
 import static com.codeborne.selenide.Selenide.open;
 
-public class Settings implements Pages {
+public class Settings implements Pages, Steps {
 
     @BeforeClass(alwaysRun = true)
     public static void webDriverSetup() {
         BaseDriver.setParameters();
     }
 
-    @SneakyThrows
     @BeforeMethod(alwaysRun = true)
     public static void goToMainPage() {
         open("https://www.swedbank.ee/");
-        mainPage.setLanguage();
+        mainPageSteps.setLanguage();
     }
-
 
     @AfterMethod(alwaysRun = true)
     public static void tearDown() {

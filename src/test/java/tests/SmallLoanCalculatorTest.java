@@ -1,103 +1,80 @@
 package tests;
 
+import core.Retry;
 import core.Settings;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Story;
-import org.openqa.selenium.Keys;
-import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 @Feature("Small Loan Calculator")
 @Story("Check new features for small loan calculator")
 public class SmallLoanCalculatorTest extends Settings {
 
-    @Test(description = "Test-case #1: Check that “Choose loan sum” slider works correctly", groups = "Small Loan Calculator")
+    @BeforeMethod
+    public void goSmallLoanPage () {
+        mainPageSteps.goToSmallLoanPage();
+    }
+
+    @Test(description = "Test-case #1: Check that “Choose loan sum” slider works correctly", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkChooseLoanSumSlider() {
-        mainPage.goToSmallLoanPage();
-        smallLoanPage.changeLoanSumSliderPosition(100);
-
-        String sumOverSlider = smallLoanPage.loanSumOverSlider.getText();
-        String sumInRightField = smallLoanPage.loanSumField.getValue();
-
-        Assert.assertEquals(sumOverSlider, sumInRightField);
+        smallLoanCalculatorSteps.changeLoanSumSliderPosition(100);
+        smallLoanCalculatorSteps.compareSumOverSliderAndInField();
     }
 
-    @Test(description = "Test-case #2: Check that you cannot type more than 20 000 in “Choose loan sum” field", groups = "Small Loan Calculator")
+    @Test(description = "Test-case #2: Check that you cannot type more than 20 000 in “Choose loan sum” field", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkLoanSumFieldCapacity() {
-        mainPage.goToSmallLoanPage();
-        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "21000");
-        smallLoanPage.monthlyPaymentField.click();
-
-        Assert.assertNotEquals(smallLoanPage.loanSumField.getValue(), "21000 €");
-        Assert.assertTrue(smallLoanPage.loanSumField.getValue().contains("20000 €"));
+        smallLoanCalculatorSteps.fillLoanSum("21000");
+        smallLoanCalculatorSteps.checkMaxValueInLoanSumField(21000);
     }
 
-    @Test(description = "Test-case #3: Check that you cannot type 0 in “Choose loan sum” field", groups = "Small Loan Calculator")
+    @Test(description = "Test-case #3: Check that you cannot get 0 Euro for loan", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkZeroInLoanSumField() {
-        mainPage.goToSmallLoanPage();
-        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "0");
-        smallLoanPage.monthlyPaymentField.click();
-
-        Assert.assertNotEquals(smallLoanPage.loanSumField.getValue(), "0 €");
-        Assert.assertTrue(smallLoanPage.loanSumField.getValue().contains("300 €"));
+        smallLoanCalculatorSteps.fillLoanSum("0");
+        smallLoanCalculatorSteps.checkMinValueInLoanSumField(0);
     }
 
-    @Test(description = "Test-case #4: Check that monthly payment changes when you change loan sum", groups = "Small Loan Calculator")
+    @Test(description = "Test-case #4: Check that monthly payment changes when you change loan sum", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkThatMonthlyPaymentChanges() {
-        mainPage.goToSmallLoanPage();
+        Integer BeforeAction = smallLoanCalculatorSteps.getMonthlyPaymentSum();
 
-        String monthlyPaymentBeforeAction = smallLoanPage.monthlyPaymentField.getText();
+        smallLoanCalculatorSteps.fillLoanSum("20000");
 
-        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "20000");
-        smallLoanPage.monthlyPaymentField.click();
+        Integer AfterAction = smallLoanCalculatorSteps.getMonthlyPaymentSum();
 
-        String monthlyPaymentAfterAction = smallLoanPage.monthlyPaymentField.getText();
-
-        Assert.assertNotEquals(monthlyPaymentBeforeAction, monthlyPaymentAfterAction);
+        smallLoanCalculatorSteps.checkMonthlyPaymentSumAfterAction(BeforeAction, AfterAction);
     }
 
-    @Test(description = "Test-case #5: Check that “Choose loan term” slider works correctly", groups = "Small Loan Calculator")
+    @Test(description = "Test-case #5: Check that “Choose loan term” slider works correctly", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkThatLoanTermSliderWorks() {
-        mainPage.goToSmallLoanPage();
+        Integer BeforeAction = smallLoanCalculatorSteps.getMonthlyPaymentSum();
 
-        Integer monthlyPaymentBeforeAction = Integer.parseInt(smallLoanPage.monthlyPaymentField.getText());
+        smallLoanCalculatorSteps.changeLoanTermSliderPosition(500);
 
-        smallLoanPage.changeLoanTermSliderPosition(500);
+        Integer AfterAction = smallLoanCalculatorSteps.getMonthlyPaymentSum();
 
-        Integer monthlyPaymentAfterAction = Integer.parseInt(smallLoanPage.monthlyPaymentField.getText());
-
-        Assert.assertNotEquals(monthlyPaymentBeforeAction, monthlyPaymentAfterAction);
-        Assert.assertTrue(monthlyPaymentBeforeAction > monthlyPaymentAfterAction);
+        smallLoanCalculatorSteps.checkMonthlyPaymentSumAfterAction(BeforeAction, AfterAction);
     }
 
-    @Test(description = "Test-case #6: Check that “Agreement fee” changes correctly", groups = "Small Loan Calculator")
+    @Test(description = "Test-case #6: Check that “Agreement fee” changes correctly", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkThatAgreementFeeChanges() {
-        mainPage.goToSmallLoanPage();
+        Integer BeforeAction = smallLoanCalculatorSteps.getAgreementFeeValue();
 
-        Integer agreementFeeBeforeAction = Integer.parseInt(smallLoanPage.agreementFeeField.getText());
+        smallLoanCalculatorSteps.fillLoanSum("20000");
 
-        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "20000");
-        smallLoanPage.monthlyPaymentField.click();
+        Integer AfterAction = smallLoanCalculatorSteps.getAgreementFeeValue();
 
-        Integer agreementFeeAfterAction = Integer.parseInt(smallLoanPage.agreementFeeField.getText());
-
-        Assert.assertNotEquals(agreementFeeBeforeAction, agreementFeeAfterAction);
-        Assert.assertTrue(agreementFeeBeforeAction < agreementFeeAfterAction);
-        Assert.assertTrue(agreementFeeAfterAction.equals(300));
+        smallLoanCalculatorSteps.checkAgreementFeeAfterAction(BeforeAction, AfterAction);
     }
 
-    @Test(description = "Test-case #7: Check that slider moves when you change loan sum manually", groups = "Small Loan Calculator")
+    @Test(description = "Test-case #7: Check that slider moves when you change loan sum manually", groups = "Small Loan Calculator", retryAnalyzer = Retry.class)
     public void checkSumOverSliderAfterMove() {
-        mainPage.goToSmallLoanPage();
+        Integer sumOverSliderBeforeAction = smallLoanCalculatorSteps.getLoanSumOverSlider();
 
-        String sumOverSliderBeforeAction = smallLoanPage.loanSumOverSlider.getText();
+        smallLoanCalculatorSteps.fillLoanSum("10000");
 
-        smallLoanPage.loanSumField.doubleClick().sendKeys(Keys.BACK_SPACE, "10000");
-        smallLoanPage.monthlyPaymentField.click();
+        Integer sumOverSliderAfterAction = smallLoanCalculatorSteps.getLoanSumOverSlider();
 
-        String sumOverSliderAfterAction = smallLoanPage.loanSumOverSlider.getText();
-
-        Assert.assertEquals(sumOverSliderAfterAction, "10000 €");
-        Assert.assertNotEquals(sumOverSliderBeforeAction, sumOverSliderAfterAction);
+        smallLoanCalculatorSteps.checkValuesOverSlider(sumOverSliderBeforeAction, sumOverSliderAfterAction, 10000);
     }
 }

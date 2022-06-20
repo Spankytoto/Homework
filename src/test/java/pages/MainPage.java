@@ -1,12 +1,7 @@
 package pages;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import io.qameta.allure.Step;
-import org.omg.CORBA.TIMEOUT;
 import org.openqa.selenium.support.FindBy;
-
-import java.time.Duration;
 
 public class MainPage {
 
@@ -24,15 +19,4 @@ public class MainPage {
 
     @FindBy(xpath = "//*[text()='Small loan']")
     public SelenideElement smallLoanSubMenu;
-
-    public void setLanguage () {
-        acceptAllCookiesButton.should(Condition.enabled, Duration.ofSeconds(60)).click();
-        languageBar.click();
-        switchToEnglishButton.click();
-    }
-
-    public void goToSmallLoanPage () {
-        mainMenuLoanLeasingButton.click();
-        smallLoanSubMenu.click();
-    }
 }
