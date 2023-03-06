@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 @Story("Check new features for small loan calculator")
 public class SmallLoanCalculatorTest extends Settings {
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void goSmallLoanPage () {
         mainPageSteps.goToSmallLoanPage();
     }

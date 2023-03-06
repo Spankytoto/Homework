@@ -8,10 +8,10 @@ public class MainPage {
     @FindBy(xpath = "//*[@id='language-bar']")
     public SelenideElement languageBar;
 
-    @FindBy(xpath = "//button[@data-wt-label='Accept all cookies']")
+    @FindBy(xpath = "//*[@class='button ui-cookie-consent__accept-button']")
     public SelenideElement acceptAllCookiesButton;
 
-    @FindBy(xpath = "//*[@wtlabel='ENG']//span[text()='EN']")
+    @FindBy(xpath = "(//span[text()='ENG'])[2]")
     public SelenideElement switchToEnglishButton;
 
     @FindBy(xpath = "//*[text()='Loan, leasing']")

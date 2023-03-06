@@ -1,6 +1,6 @@
 
 browser: "chrome"
-headless: true
+headless: false
 startMaximized: false
 browserSize: "1920x1080"
 host: "https://www.swedbank.ee"
